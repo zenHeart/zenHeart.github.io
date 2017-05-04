@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: default
 title:  'github pages'
 date:   2017-04-30 13:46:11 +0800
 categories: github jekyll ruby
+permalink: github_page.html
 --- 
 
 
