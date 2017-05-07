@@ -13,20 +13,21 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: zenheartcode
+title: 禅心编码
 email: locke.cheng@wpi-group.com
 description: > # this means to ignore newlines until "baseurl:"
-  基于 jekyll 的博客测试.
+  禅心编码
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: zenheart
-github_username:  zenheart
+twitter_username: zenheartCL
+github_username:  ZenHeart
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-merlot
+theme: minima
 gems:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+  - todo.md

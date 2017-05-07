@@ -1,12 +1,5 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
-
-# IntelliJ project files
-.idea
-*.iml
 _site
 .sass-cache
-out
-gen
+.idea
 todo.md
+

@@ -1,10 +1,21 @@
 ---
-layout: default
-title:  'github pages'
-date:   2017-04-30 13:46:11 +0800
+layout: post
+tag: jekyll
+title:  'github-pages'
 categories: github jekyll ruby
-permalink: github_page.html
+tag: github
+date:  2017-04-30 13:31:01 +0800
 --- 
+
+2017/5/5
+
+# 目录
+
+* github pages 概述
+* 快速入门
+* jekyll
+* 域名
+
 
 
 # 概述
