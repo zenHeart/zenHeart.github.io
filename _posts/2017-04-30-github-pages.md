@@ -89,7 +89,7 @@ git remote add <url>
 
     
 
-```js
+~~~javascript
 var a = 1;
 
 function add(a,b) {
@@ -99,5 +99,8 @@ function add(a,b) {
 
 JSON.stringify('hello');
 console.log('demo');
-```
+~~~
 
+~~~js
+var a = 1;
+~~~
