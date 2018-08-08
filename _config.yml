@@ -23,11 +23,9 @@ twitter_username: zenheartCL
 github_username:  ZenHeart
 
 # Build settings
-highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
 theme: minima
 gems:
   - jekyll-feed
@@ -36,3 +34,12 @@ exclude:
   - Gemfile.lock
   - todo.md
   - README.md
+
+# 设置默认编译模板
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "blog"

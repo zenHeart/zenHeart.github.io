@@ -1,5 +1,4 @@
 ---
-layout: post
 tag: jekyll
 title:  'github-pages'
 categories: github jekyll ruby
@@ -101,6 +100,3 @@ JSON.stringify('hello');
 console.log('demo');
 ~~~
 
-~~~js
-var a = 1;
-~~~
