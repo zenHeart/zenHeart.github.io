@@ -1,0 +1,31 @@
+@startuml
+title xx app
+skinparam backgroundColor LightYellow
+skinparam state {
+  StartColor MediumBlue
+  EndColor Red
+  BackgroundColor Peru
+  BackgroundColor<<Warning>> Olive
+  BorderColor Gray
+  FontName Impact
+}
+
+state "未登录" as un_login
+state "登录" as login
+
+[*] --> un_login:进入 app
+un_login: **只允许访问的界面**
+un_login:* 登录界面
+un_login:* 忘记密码界面
+un_login:* 注册界面
+un_login -R-> login:登录
+login: **不可访问的界面**
+login: * 登录界面
+login: * 忘记密码界面
+login: * 注册界面
+login -> un_login: 退出登录
+
+@enduml
+
+
+

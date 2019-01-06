@@ -1,0 +1,21 @@
+@startuml
+title 充电逻辑详解
+actor "用户" as u
+boundary "WEBAPP 前端" as af
+entity "WEBAPP 后端" as ab
+
+!define getVerfCode [[http://www.baidu.com getVerfCode]]
+
+==验证码逻辑==
+autonumber
+u->af:点击获取验证码
+af->af:
+af->ab:调用 login 接口发送用户信息
+ab->ab:\n\
+# 合法性,完整性校验\n\
+# 登录检查 \n\
+# 其他逻辑
+ab--> af: 返回结果
+af->af:成功切换路由
+hide footbox
+@enduml

@@ -2,5 +2,7 @@ _site
 .sass-cache
 .idea
 todo.md
-_drafts
+_drafts/
+node_modules
+lab/
 
