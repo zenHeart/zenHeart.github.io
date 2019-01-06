@@ -1,7 +1,5 @@
 ---
-tag: jekyll
-title:  'github-pages'
-categories: github jekyll ruby
+tag: github
 date:  2017-04-30 13:31:01 +0800
 --- 
 

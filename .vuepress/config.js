@@ -9,6 +9,7 @@ module.exports = {
         }
     },
     themeConfig: {
+        docsDir: 'posts',
         sidebar: createSidebar()
     }
 }
