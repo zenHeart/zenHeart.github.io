@@ -1,0 +1,42 @@
+@startuml
+
+title 授权流程详解
+actor "用户" as u
+boundary "前端" as f
+entity "后端" as b
+
+==生成 token==
+autonumber
+u->f:输入账号,密码
+f->b:调用 login 接口
+b->b:检查用户存在性
+b->b:生成 token,缓存系统保存 token \n\
+并设定过期时间
+b-->f:将 token 存入名为 XSRF-TOKEN 的 cookie 中\n\
+重定向页面到首页
+f-->u:用户被定向到主页
+
+==token 未失活==
+autonumber
+u->f:授权用户访问界面,触发请求
+f->b:在请求头中包含 X-XSRF-TOKEN 字段值和 cookie 中的.\n\
+XSRF-TOKEN 相同 
+b->b:比对 X-XSRF-TOKEN 和 cookie 中的 XRF-TOKEN,然后核对 token.\n\
+**一般接口服务框架均支持 XSRF-TOKEN 机制,请自行查阅配置**
+alt 
+else 合法
+b-->f:返回结果
+f-->u:渲染界面
+else 非法
+autonumber 4
+b-->f:删除 cookie,重定向到登录界面
+u->u:用户重新登录
+end
+
+==token 失活,或首次登录==
+autonumber
+f-->f:客户端未检测到包含 XSRF-TOKEN 的 cookie
+f->u:定向到 login 界面
+u->u:重新登录
+hide footbox
+@enduml

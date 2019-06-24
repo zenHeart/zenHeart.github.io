@@ -1,0 +1,13 @@
+@startuml
+actor user as u
+entity "nat 服务器" as fs
+entity "本地服务器" as ls
+
+u -> fs:访问 nat 的地址
+fs -> fs: 将消息发送给 nat 对应的客户端
+fs-> ls: 本地 nat 客户端接收到数据
+ls->ls: 将数据转发给对应的服务
+ls-->fs:服务处理结果基于 nat 客户端转发
+fs-->u:返回本地服务器的内容
+
+@enduml

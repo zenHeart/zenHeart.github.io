@@ -1,0 +1,131 @@
+@startuml
+title auth2.0 机制详解
+
+actor "user" as u
+entity "第三方待授权服务器\n(应用)" as us
+entity "认证服务器\n(微信认证服务器)" as aus
+entity "应用服务器\n(微信)" as s
+
+note over u,s
+*//待授权服务器// 需要获取授权的第三方服务器
+*//认证服务器// 实现验证的服务器
+*//应用服务器// 提供资源的服务器
+下面以微信为例进行讲解
+详见 [[http://www.rfcreader.com/#rfc6749_line1019 auth2.0]]
+
+end note
+
+==基本流程==
+autonumber
+
+u->us:访问第三方应用
+us->aus:请求微信授权
+aus->u:向用户确认授权
+u-->aus:同意授权
+aus-->us:返回对应的授权令牌
+us->aus:利用令牌请求资源
+aus->aus:处理请求
+aus->s:请求资源
+s-->aus:返回资源
+aus-->us:转发请求结果
+
+==授权方式详解==
+autonumber
+opt 1 授权码模式
+us->aus:约定允许授权的重定向地址.
+u->us:访问应用
+us->aus:转向认证服务器\n\
+核心的请求参数包括\n\
+*//response_type// 授权类型,必填固定为 code\n\
+*//client_id// 客户端 id,必填\n\
+*//redirect_uri// 重定向 URI,可选\n\
+*//scope// 权限范围,可选\n\
+*//state// 客户端当前状态,任意值,认证服务器会原样返回
+aus->u:请求用户许可
+u->aus:用户授权
+aus-->us:返回结果并附上授权码\n\
+核心字段:\n\
+*//code// 授权码,有效期通常为 10 分钟\n\
+*//state// 原样返回的值
+us->aus:保存认证服务器授权码,申请令牌\n\
+*//grant_type// 授权模式,必填项,固定为 authorization_code\n\
+*//code// 上一步获取到的授权码\n\
+*//redirect_uri// 重定向 URI,必须和前面一致\n\
+*//client_id// 客户端 id,必须和前面一致
+aus-->us:确认重定向地址和授权码后返回令牌\n\
+*//access_token//表示访问令牌，必选项\n\
+*//token_type//表示令牌类型，该值大小写不敏感，必选项，可以是bearer类型或mac类型\n\
+*//expires_in//表示过期时间，单位为秒。如果省略该参数，必须其他方式设置过期时间\n\
+*//refresh_token//表示更新令牌，用来获取下一次的访问令牌，可选项\n\
+*//scope//表示权限范围，如果与客户端申请的范围一致，此项可省略
+end
+
+opt 2 简化模式
+autonumber
+us->aus:约定允许授权的重定向地址.
+u->us:访问应用
+us->aus:转向认证服务器\n\
+核心的请求参数包括\n\
+*//response_type// 授权类型,必填固定为 token\n\
+*//client_id// 客户端 id,必填\n\
+*//redirect_uri// 重定向 URI,可选\n\
+*//scope// 权限范围,可选\n\
+*//state// 客户端当前状态,任意值,认证服务器会原样返回
+aus->u:请求用户许可
+u->aus:用户授权
+aus-->us:返回结果并附上令牌\n\
+核心字段:\n\
+*//access_token//表示访问令牌，必选项\n\
+*//token_type//表示令牌类型，该值大小写不敏感，必选项，可以是bearer类型或mac类型\n\
+*//expires_in//表示过期时间，单位为秒。如果省略该参数，必须其他方式设置过期时间\n\
+*//scope//表示权限范围，如果与客户端申请的范围一致，此项可省略\n\
+*//state//原样返回客户端字段
+note  left:此处忽略了用户代理
+end
+
+opt 3 密码模式
+autonumber
+u->us:访问应用,提供用户名密码
+us->aus:转向认证服务器\n\
+核心的请求参数包括\n\
+*//grant_type// 授权类型,必填固定为 password\n\
+*//username// 用户名,必填\n\
+*//password// 密码\n\
+*//scope// 权限范围,可选\n\
+aus-->us:返回结果并附上令牌\n\
+核心字段:\n\
+*//access_token//表示访问令牌，必选项\n\
+*//token_type//表示令牌类型，该值大小写不敏感，必选项，可以是bearer类型或mac类型\n\
+*//expires_in//表示过期时间，单位为秒。如果省略该参数，必须其他方式设置过期时间
+end
+
+opt 4 客户端模式
+autonumber
+us->aus:向认证服务器发起请求\n\
+核心的请求参数包括\n\
+*//grant_type// 授权类型,必填固定为 clientcredentials\n\
+*//scope// 权限范围,可选\n\
+aus-->us:返回结果并附上令牌\n\
+核心字段:\n\
+*//access_token//表示访问令牌，必选项\n\
+*//token_type//表示令牌类型，该值大小写不敏感，必选项，可以是bearer类型或mac类型\n\
+*//expires_in//表示过期时间，单位为秒。如果省略该参数，必须其他方式设置过期时间
+end
+
+==跟新令牌==
+autonumber
+us->aus:向认证服务器发起请求\n\
+核心的请求参数包括\n\
+*//grant_type// 授权类型,必填固定为 refreshtoken\n\
+*//refresh_token// 早前收到的令牌,必填\n\
+*//scope// 不得大于初期的作用域
+aus-->us:返回结果并附上令牌\n\
+核心字段:\n\
+*//access_token//表示访问令牌，必选项\n\
+*//token_type//表示令牌类型，该值大小写不敏感，必选项，可以是bearer类型或mac类型\n\
+*//expires_in//表示过期时间，单位为秒。如果省略该参数，必须其他方式设置过期时间
+
+
+
+hide footbox
+@enduml
