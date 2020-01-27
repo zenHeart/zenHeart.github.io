@@ -1,0 +1,41 @@
+todo:
+	blogs:
+		☐ 完成模块机制文章撰写
+	plan:
+		☐ [html templateyy](https://html5boilerplate.com/)
+		☐  [redux 学习](https://redux.js.org/basics/data-flow)
+		☐ [restify](http://restify.com/docs/home/)
+	theme:	
+		☐  [header 配色](https://nodered.org/)
+		☐  [home 主页风格](http://t12group.com/100coolguests/about/)
+		☐  [about 风格使用](https://fosterelli.co/developers-dont-understand-cors)
+		☐  [配色使用](https://bob.ippoli.to/archives/2005/12/05/remote-json-jsonp/)
+		☐  [ISUX 网页](https://isux.tencent.com/articles/)
+		☐ about 页面仿照 [detail schedule](https://us.vuejs.org/schedule/)
+		☐  [web 简史](./posts/2018-09-22-web-history.md) 完善 webpack 等核心工具的历史.
+		☐  主题设计
+		☐ [博客时间线设计](https://blog.github.com/changelog/)
+		☐  标题 参看 [geeky gadgets](http://www.geeky-gadgets.com)
+		☐ [主页头](http://www.painful.cn/archives/category/aboutck)
+		☐ 主页
+			☐ 参看 [readhub](https://readhub.me/tech) 极简风格
+			☐ 参看 [github page](https://github.com/blog)
+			☐ 完全仿照 github bolg 进行设计
+		☐ 索引页 
+		☐ 内容
+			 ☐ 标题
+			 ☐ 目录
+			 ☐ 主题
+			 ☐ 评论
+			 ☐ 自适应
+			 ☐ 换肤
+		☐ [极简风格](https://timothygu.me/)
+		☐ [timeline](https://vue.w3ctech.com/)
+			
+
+
+
+
+
+
+

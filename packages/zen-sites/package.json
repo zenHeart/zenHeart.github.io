@@ -1,0 +1,29 @@
+{
+    "name": "zen-sites",
+    "verszion": "1.0.0",
+    "description": "记录自己在学习编程的体悟.",
+    "main": "index.js",
+    "scripts": {
+        "start": "vuepress dev docs",
+        "build": "vuepress build docs",
+        "deploy": "scripts/deploy.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zenHeart/zenHeart.github.io.git"
+    },
+    "keywords": [],
+    "author": "zenheart <zenheart_register@163.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zenHeart/zenHeart.github.io/issues"
+    },
+    "homepage": "https://github.com/zenHeart/zenHeart.github.io#readme",
+    "devDependencies": {
+        "lerna": "^3.14.1",
+        "markdown-it-task-lists": "^2.1.1"
+    },
+    "dependencies": {
+        "vuepress-theme-zen": "^1.2.0"
+    }
+}
