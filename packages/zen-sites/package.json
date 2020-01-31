@@ -7,7 +7,8 @@
         "start": "vuepress dev docs",
         "build": "vuepress build docs",
         "deploy": "scripts/deploy.sh",
-        "debug": "node debug  `which vuepress` dev docs"
+        "debug": "node debug  `which vuepress` dev docs",
+        "blog:new": "vuepress blog docs"
     },
     "repository": {
         "type": "git",

@@ -1,4 +1,8 @@
 const path = require('path');
+const fs = require('fs');
+const dayjs = require('dayjs');
+const { logger, chalk } = require('@vuepress/shared-utils');
+const { yellow } = chalk;
 
 // Theme API.
 module.exports = (options, ctx) => {
@@ -86,6 +90,27 @@ module.exports = (options, ctx) => {
                     layout: 'BlogsLayout'
                 }
             }
-        ]
+        ],
+
+        extendCli(cli) {
+            cli.command('blog <dir> [file]', '')
+                .allowUnknownOptions()
+                .option('-t,--tags [tags]', 'add blog tags')
+                .action((dir = 'docs', file = 'test', options) => {
+                    createBlog(dir, file, options.tags);
+                });
+        }
     };
 };
+
+function createBlog(dir, name, tags = []) {
+    name = `${dayjs().format('YYYY-MM-DD')}-${name}.md`;
+    let filePath = path.resolve(dir, 'posts', name);
+    tags = Array.isArray(tags) ? tags : tags.split(' ');
+    const fileTemplate = `---
+tags:
+${tags.reduce((sum, ele) => (sum += `\t- ${ele}\n`), '')}---
+`;
+    fs.writeFileSync(filePath, fileTemplate);
+    logger.success(`create ${yellow(filePath)} success!`);
+}
