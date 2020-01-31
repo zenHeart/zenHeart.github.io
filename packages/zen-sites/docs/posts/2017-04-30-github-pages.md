@@ -1,11 +1,14 @@
 ---
-tag: github
-date:  2017-04-30 13:31:01 +0800
+tags:  
+    - git
 --- 
 
 
 # github pages
 
+**详解 github 的使用**
+
+---
 
 ## 概述
 

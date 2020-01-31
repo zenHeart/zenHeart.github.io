@@ -1,5 +1,0 @@
-{
-	"scripts": {
-		"build":"browserify index.js  -d -o bundle.js"
-	}
-}

@@ -1,0 +1,44 @@
+{
+    "name": "vuepress-theme-zen",
+    "version": "1.2.0",
+    "description": "Default theme for VuePress",
+    "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vuejs/vuepress.git",
+        "directory": "packages/@vuepress/theme-default"
+    },
+    "keywords": [
+        "documentation",
+        "vue",
+        "vuepress",
+        "generator"
+    ],
+    "author": "zenheart <zenheart_register@163.com> (https://blog.zenheart.site/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vuejs/vuepress/issues"
+    },
+    "homepage": "https://github.com/zenHeart/zenHeart.github.io/tree/master/packages/vuepress-theme-zen#readme",
+    "dependencies": {
+        "@vuepress/plugin-active-header-links": "^1.2.0",
+        "@vuepress/plugin-nprogress": "^1.2.0",
+        "@vuepress/plugin-search": "^1.2.0",
+        "dayjs": "^1.8.19",
+        "docsearch.js": "^2.5.2",
+        "fibers": "^4.0.2",
+        "lodash": "^4.17.15",
+        "stylus": "^0.54.5",
+        "stylus-loader": "^3.0.2",
+        "vuepress-plugin-blog-info": "^0.0.0",
+        "vuepress-plugin-container": "^2.0.2",
+        "vuepress-plugin-smooth-scroll": "^0.0.3"
+    },
+    "devDependencies": {
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2"
+    }
+}

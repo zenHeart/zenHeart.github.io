@@ -1,5 +1,7 @@
 ---   
-tag: system concept   
+tags:  
+    - 计算机基础
+    - 操作系统
 birth: 2016-08-22 09:05:51   
 modified: 2016-12-30 17:26:32   
 ---

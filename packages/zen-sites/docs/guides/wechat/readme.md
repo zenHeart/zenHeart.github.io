@@ -1,8 +1,8 @@
 ---
-title:readme    
-tag:readme      
-creat:2016-10-14      
-modified:2016-10-14      
+title: readme    
+tags:  readme      
+create: 2016-10-14      
+modified: 2016-10-14      
 ---
 
 readme

@@ -3,7 +3,6 @@ _site
 .idea
 todo.md
 _drafts/
-node_modules
+node_modules/
 lab/
 .vuepress/
-

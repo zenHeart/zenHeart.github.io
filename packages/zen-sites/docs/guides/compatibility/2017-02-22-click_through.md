@@ -1,5 +1,6 @@
 ---
-tag: browser bug      
+tags:  
+    - 兼容性     
 birth: 2017-02-22      
 modified: 2017-02-22      
 ---

@@ -1,0 +1,69 @@
+Arguments: 
+  /Users/lockepc/.nvm/versions/node/v11.13.0/bin/node /Users/lockepc/.nvm/versions/node/v11.13.0/bin/yarn add -D sass-loader node-sass
+
+PATH: 
+  /Users/lockepc/.nvm/versions/node/v11.13.0/bin:/Users/lockepc/.jsvu:/Users/lockepc/bin:/usr/local/bin:/Users/lockepc/.nvm/versions/node/v11.13.0/bin:/Users/lockepc/.rvm/gems/ruby-2.4.0/bin:/Users/lockepc/.rvm/gems/ruby-2.4.0@global/bin:/Users/lockepc/.rvm/rubies/ruby-2.4.0/bin:/Users/lockepc/code/source/depot_tools:/usr/local/bin/php:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/X11/bin:/Users/lockepc/.rvm/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  11.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/vuepress-plugin-blog-info: Not found
+      at Request.params.callback [as _callback] (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:66947:18)
+      at Request.self.callback (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:140665:22)
+      at Request.emit (events.js:193:13)
+      at Request.<anonymous> (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:141637:10)
+      at Request.emit (events.js:193:13)
+      at IncomingMessage.<anonymous> (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:141559:12)
+      at Object.onceWrapper (events.js:281:20)
+      at IncomingMessage.emit (events.js:198:15)
+      at endReadableNT (_stream_readable.js:1142:12)
+      at processTicksAndRejections (internal/process/task_queues.js:81:17)
+
+npm manifest: 
+  {
+      "name": "zen-sites",
+      "verszion": "1.0.0",
+      "description": "记录自己在学习编程的体悟.",
+      "main": "index.js",
+      "scripts": {
+          "start": "vuepress dev docs",
+          "build": "vuepress build docs",
+          "deploy": "scripts/deploy.sh",
+          "debug": "node debug  `which vuepress` dev docs"
+      },
+      "repository": {
+          "type": "git",
+          "url": "git+https://github.com/zenHeart/zenHeart.github.io.git"
+      },
+      "keywords": [],
+      "author": "zenheart <zenheart_register@163.com>",
+      "license": "ISC",
+      "bugs": {
+          "url": "https://github.com/zenHeart/zenHeart.github.io/issues"
+      },
+      "homepage": "https://github.com/zenHeart/zenHeart.github.io#readme",
+      "devDependencies": {
+          "lerna": "^3.14.1",
+          "markdown-it-task-lists": "^2.1.1",
+          "node-sass": "^4.13.1",
+          "sass-loader": "^8.0.2"
+      },
+      "dependencies": {
+          "sass-loader": "^8.0.2",
+          "vuepress-plugin-blog-info": "^0.0.0",
+          "vuepress-theme-zen": "^1.2.0"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -6,7 +6,8 @@
     "scripts": {
         "start": "vuepress dev docs",
         "build": "vuepress build docs",
-        "deploy": "scripts/deploy.sh"
+        "deploy": "scripts/deploy.sh",
+        "debug": "node debug  `which vuepress` dev docs"
     },
     "repository": {
         "type": "git",
@@ -21,9 +22,13 @@
     "homepage": "https://github.com/zenHeart/zenHeart.github.io#readme",
     "devDependencies": {
         "lerna": "^3.14.1",
-        "markdown-it-task-lists": "^2.1.1"
+        "markdown-it-task-lists": "^2.1.1",
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2"
     },
     "dependencies": {
+        "sass-loader": "^8.0.2",
+        "vuepress-plugin-blog-info": "^0.0.0",
         "vuepress-theme-zen": "^1.2.0"
     }
 }

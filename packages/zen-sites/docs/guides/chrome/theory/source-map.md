@@ -1,6 +1,8 @@
 ---
 title: source_map    
-tags: chrome tool      
+tags: 
+    - chrome 
+    - tool      
 birth: 2017-11-08      
 modified: 2017-11-08      
 ---

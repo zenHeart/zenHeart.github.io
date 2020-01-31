@@ -1,6 +1,7 @@
 ---
 title: lighthouse    
-tags: performance web      
+tags: 
+    - performance
 birth: 2017-09-13      
 modified: 2017-09-13      
 ---

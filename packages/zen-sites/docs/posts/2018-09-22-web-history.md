@@ -1,5 +1,6 @@
 ---
-tag: web
+tags: 
+    - web
 ---
 
 # web 简史

@@ -1,0 +1,66 @@
+Arguments: 
+  /Users/lockepc/.nvm/versions/node/v11.13.0/bin/node /Users/lockepc/.nvm/versions/node/v11.13.0/bin/yarn add -D sass-loader node-sass
+
+PATH: 
+  /Users/lockepc/code/github/zenheart.github.io/packages/vuepress-plugin-blog-info/node_modules/.bin:/Users/lockepc/code/github/zenheart.github.io/packages/node_modules/.bin:/Users/lockepc/code/github/zenheart.github.io/node_modules/.bin:/Users/lockepc/code/github/node_modules/.bin:/Users/lockepc/code/node_modules/.bin:/Users/lockepc/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/Users/lockepc/.nvm/versions/node/v11.13.0/bin:/Users/lockepc/.nvm/versions/node/v11.13.0/bin:/Users/lockepc/.jsvu:/Users/lockepc/bin:/usr/local/bin:/Users/lockepc/.nvm/versions/node/v11.13.0/bin:/Users/lockepc/.rvm/gems/ruby-2.4.0/bin:/Users/lockepc/.rvm/gems/ruby-2.4.0@global/bin:/Users/lockepc/.rvm/rubies/ruby-2.4.0/bin:/Users/lockepc/code/source/depot_tools:/usr/local/bin/php:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/X11/bin:/Users/lockepc/.rvm/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  11.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/vuepress-theme-zen: Not found
+      at Request.params.callback [as _callback] (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:66947:18)
+      at Request.self.callback (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:140665:22)
+      at Request.emit (events.js:193:13)
+      at Request.<anonymous> (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:141637:10)
+      at Request.emit (events.js:193:13)
+      at IncomingMessage.<anonymous> (/Users/lockepc/.nvm/versions/node/v11.13.0/lib/node_modules/yarn/lib/cli.js:141559:12)
+      at Object.onceWrapper (events.js:281:20)
+      at IncomingMessage.emit (events.js:198:15)
+      at endReadableNT (_stream_readable.js:1142:12)
+      at processTicksAndRejections (internal/process/task_queues.js:81:17)
+
+npm manifest: 
+  {
+      "name": "vuepress-plugin-blog-info",
+      "version": "0.0.0",
+      "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+      "keywords": [],
+      "author": "zenheart <zenheart_register@163.com> (https://blog.zenheart.site/)",
+      "homepage": "https://github.com/zenHeart/zenHeart.github.io/tree/master/packages/vuepress-plugin-blog-info#readme",
+      "license": "ISC",
+      "main": "lib/index.js",
+      "directories": {
+          "lib": "lib",
+          "test": "__tests__"
+      },
+      "files": [
+          "lib"
+      ],
+      "repository": {
+          "type": "git",
+          "url": "git+https://github.com/zenHeart/zenHeart.github.io.git"
+      },
+      "scripts": {
+          "test": "echo \"Error: run tests from root\" && exit 1"
+      },
+      "bugs": {
+          "url": "https://github.com/zenHeart/zenHeart.github.io/issues"
+      },
+      "dependencies": {
+          "remove-markdown": "^0.3.0",
+          "vuepress-theme-zen": "^1.2.0"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,5 +1,6 @@
 ---
-tag: translation
+tags: 
+    - translation
 ---
 
 # 技术写作须知

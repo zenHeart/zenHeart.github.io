@@ -1,7 +1,7 @@
 ---
 title: debug    
-tag: debug      
-creat: 2016-10-14      
+tags:  debug      
+create: 2016-10-14      
 modified: 2016-10-14      
 ---
 
@@ -88,10 +88,10 @@ JSAPI 的界面相同。
 ```
 该对象初始成功回拥有如下方法
 ## WeixinJSBridge 方法
-方法名|用途|通用形式|
-:---|:---|:---|
-invoke|调用指定 API|WeixinJSBridge.invoke("API名称","调用参数",<回调函数>);
-on|事件监听|WeixinJSBridge.on("事件名称",<回调函数>);
+| 方法名 | 用途         | 通用形式                                                |
+| :----- | :----------- | :------------------------------------------------------ |
+| invoke | 调用指定 API | WeixinJSBridge.invoke("API名称","调用参数",<回调函数>); |
+| on     | 事件监听     | WeixinJSBridge.on("事件名称",<回调函数>);               |
 
 具体内容参考:[WEUI说明](https://github.com/weui/weui/wiki/%E5%BE%AE%E4%BF%A1JSAPI)
 

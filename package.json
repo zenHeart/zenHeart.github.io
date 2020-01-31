@@ -1,26 +1,29 @@
 {
-  "name": "zenheart.github.io",
-  "version": "1.0.0",
-  "description": "记录自己在学习编程的体悟.",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vuepress dev",
-    "build": "vuepress build",
-    "deploy": "scripts/deploy.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zenHeart/zenHeart.github.io.git"
-  },
-  "keywords": [],
-  "author": "zenheart <zenheart_register@163.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zenHeart/zenHeart.github.io/issues"
-  },
-  "homepage": "https://github.com/zenHeart/zenHeart.github.io#readme",
-  "devDependencies": {
-    "markdown-it-task-lists": "^2.1.1",
-    "vuepress": "^0.14.8"
-  }
+    "name": "zenheart.github.io",
+    "version": "1.0.0",
+    "description": "主站地址: <http://blog.zenheart.site>",
+    "main": "index.js",
+    "dependencies": {
+        "markdown-it-task-lists": "^2.1.1"
+    },
+    "devDependencies": {
+        "dayjs": "^1.8.19",
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2",
+        "vuepress": "^1.2.0"
+    },
+    "scripts": {
+        "start": "lerna run start --scope  'zen-sites'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zenHeart/zenHeart.github.io.git"
+    },
+    "keywords": [],
+    "author": "zenheart <zenheart_register@163.com> (https://blog.zenheart.site/)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zenHeart/zenHeart.github.io/issues"
+    },
+    "homepage": "https://github.com/zenHeart/zenHeart.github.io#readme"
 }
