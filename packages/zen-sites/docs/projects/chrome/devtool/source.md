@@ -1,9 +1,7 @@
-source 面板
-===
+# source 面板
 
-**详解 souce 面板使用**
+**详解 source 面板使用**
 
----
 ## Filesystem
 利用文件系统实现本地代码和浏览器映射.
 
@@ -14,14 +12,14 @@ source 面板
 1. 添加项目
     1. 按`f12`打开控制台，点击`souce`工具，在空白模板中
     点击鼠标右键，选择添加工作空间。
-    ![](/img/tool_chrome_addproject.png)
+    ![](../assets/img/tool_chrome_addproject.png)
     2. 在本地或服务器端打开你添加的工程，选择一个文件点击右键，选择映射到本地文件系统。
-    ![](/img/tool_chrome_addproject2.png)
-    ![](/img/tool_chrome_addproject3.png)
+    ![](../assets/img/tool_chrome_addproject2.png)
+    ![](../assets/img/tool_chrome_addproject3.png)
     3. 重新刷新页面本地服务器网页引射到了本地文件。
-    ![](/img/tool_chrome_addproject4.png)
+    ![](../assets/img/tool_chrome_addproject4.png)
     4. 在浏览器中修改样式，会发现样式表中的文件也会自动改变
-     ![](/img/tool_chrome_addproject5.png)
+     ![](../assets/img/tool_chrome_addproject5.png)
      
     <span style="color:red">注意事项</span><br>
     1. 远程服务器和本地操作方法相同
@@ -30,7 +28,7 @@ source 面板
     4. 不需要保存，修改会自动同步到本地文件
 
 2. 在完成添加项目按图示操作
-![](../img/tool_chrome_addproject6.png)
+![](../assets/img/tool_chrome_addproject6.png)
 
 3. 右键点击任意文件夹或文件可以看到增加文件，删除文件等功能
 
@@ -65,7 +63,7 @@ source 面板
 
 **设置断点**  
 在 source 模式下，点击行号即可设置断点，注意若在行号上点击右键，会有`edit breakpoint`选项，点击它，你可以改变断点的触发条件，这时断点会变成金黄色。   
-![](../img/tool_chrome_debug1.png)   
+![](../assets/img/tool_chrome_debug1.png)   
 **关闭断点**       
 在点击行号时，你也可以选择`disable breakpoibt` 来关闭断点，这时断点颜色会变暗。   
 或者利用`remove breakpoint` 和 双击行号，来取消断点此外在，调试窗口的右边，
@@ -73,7 +71,7 @@ source 面板
 ![](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/imgs/breakpoints-pane.png)   
 除了使用`deactive breakpoint`和`diable all break point`来打开关闭所有断点以外，
 利用图中的小标记也可以实现上述效果。记住它的快捷键是**ctrl + f8** 
-![](../img/tool_chrome_debug2.png)
+![](../assets/img/tool_chrome_debug2.png)
 
 > 使用情景
 1. 在关键地方设置断点，并编辑断点条件
@@ -98,7 +96,7 @@ source 面板
 ![](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/imgs/dom-change-breakpoint.png)
 
 所有设置的断点，在`dom breakpoint` 中都可以查看，点击右键有删除 DOM 断点的选项
-![](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/imgs/dom-breakpoints-pane.png)   
+![](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/imgs/dom-breakpoints-pane.png) 
 在 souce 模板中也可以看到该选项   
 ![](https://developers.google.com/web/tools/chrome-devtools/debug/breakpoints/imgs/dom-breakpoints-pane-sources.png)   
 在上面的模板上，你同样可以使用， XHR 设置断点和事件监听断点来调试代码。  

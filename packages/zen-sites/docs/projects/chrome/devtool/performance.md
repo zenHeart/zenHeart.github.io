@@ -2,9 +2,6 @@
 
 **详细讲解 chrome tools 性能工具的使用**
 
-----
-
-
 ## 面板概览
 1. 打开控制台,点击 `Performance`
 2. 访问 <https://googlechrome.github.io/devtools-samples/jank/> 点击 `add 10` 有明显的变慢

@@ -1,7 +1,5 @@
+# network 
 
-## network 
-* `disable cache` 阻止缓存
-   
 
 
 ## chrome-internal

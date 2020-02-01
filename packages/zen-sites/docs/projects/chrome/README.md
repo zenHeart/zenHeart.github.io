@@ -1,11 +1,9 @@
-chrome 前端手册
-===
+# chrome 前端手册
 
-**详细讲解 chrome 使用中的各种技巧**
-
----
+**chrome 使用中的各种技巧**
 
 ## 概述
+
 文档旨在提升前端人员对 chrome 的使用技能,提高生产效率.
 文档会从如下方面讲解 chrome
 
@@ -24,4 +22,3 @@ chrome 前端手册
 
 ## 参考资料
 * [devtool](https://developers.google.cn/web/tools/chrome-devtools/)
-* 

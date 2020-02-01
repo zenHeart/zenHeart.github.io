@@ -1,7 +1,7 @@
 <template>
     <main class="tags-page">
         <TagList :tagName="tagName"></TagList>
-        <BlogList v-if="tagName" :showTags="false" :blogs="blogs"></BlogList>
+        <BlogList v-if="tagName" :blogs="blogs"></BlogList>
     </main>
 </template>
 

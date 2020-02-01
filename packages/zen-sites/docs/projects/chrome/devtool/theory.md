@@ -1,17 +1,7 @@
----
-title: source_map    
-tags: 
-    - chrome 
-    - tool      
-birth: 2017-11-08      
-modified: 2017-11-08      
----
+# 原理剖析
 
-源代码面板
-===
-**讲解源代码面板的功能**
+**讲解 chrome 相关工具的基本工作原理**
 
----
 
 ## source map
 在基于编译模式的前端项目中.
@@ -48,6 +38,6 @@ sourcemap 文件内容为
 ```
 
 ## 参考资料
-[source map](http://blog.teamtreehouse.com/introduction-source-maps)
+* [source map](http://blog.teamtreehouse.com/introduction-source-maps)
 
 
