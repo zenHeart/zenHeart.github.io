@@ -6,9 +6,8 @@ tags:
 
 # github pages
 
-**详解 github 的使用**
+**github pages 的使用详解**
 
----
 
 ## 概述
 

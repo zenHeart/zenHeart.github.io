@@ -1,5 +1,10 @@
 # 项目清单
 ## 指南
+
+**[面试手册](https://github.com/zenHeart/web-interview)** <Badge text="进行中" type="error"/>
+
+汇总常见面试题
+
 **[chrome 手册](./chrome)** <Badge text="待完善" type="warning"/>
 
 详细讲解 chrome 浏览器相关工具的使用。
