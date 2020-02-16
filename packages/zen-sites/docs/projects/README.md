@@ -5,6 +5,11 @@
 
 汇总常见面试题
 
+**[阅读清单](./read-list)** <Badge text="待完善" type="warning"/>
+
+汇总读过的有价值的资料
+
+
 **[chrome 手册](./chrome)** <Badge text="待完善" type="warning"/>
 
 详细讲解 chrome 浏览器相关工具的使用。

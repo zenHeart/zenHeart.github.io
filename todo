@@ -1,3 +1,8 @@
 todo:
+    ☐ 编写 Chrome 插件官方资料 https://developer.chrome.com/extensions
     ☐ sass 使用失败需找出原因
     ☐ enhanceAppFiles 内部无法引入其他模块, 需要处理
+
+
+backlog:
+    ☐ 算法学习网站参考设计 http://www.csie.ntnu.edu.tw/~u91029/index.html 来区分模块
