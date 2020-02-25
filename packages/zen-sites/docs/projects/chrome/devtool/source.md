@@ -6,19 +6,18 @@
 利用文件系统实现本地代码和浏览器映射.
 
 ### 映射本地代码
-在配置好编辑器后我们需要利用浏览器查看项目效果，将项目添加到 google 的工作空间中，
-可以在浏览器上直接微调属性，并保存到本地工程。   
+该功能可实现浏览器上的修改同步到本地源文件的功能。   
 
 1. 添加项目
     1. 按`f12`打开控制台，点击`souce`工具，在空白模板中
     点击鼠标右键，选择添加工作空间。
     ![](../assets/img/tool_chrome_addproject.png)
-    2. 在本地或服务器端打开你添加的工程，选择一个文件点击右键，选择映射到本地文件系统。
+    1. 在本地或服务器端打开你添加的工程，选择一个文件点击右键，选择映射到本地文件系统。
     ![](../assets/img/tool_chrome_addproject2.png)
     ![](../assets/img/tool_chrome_addproject3.png)
-    3. 重新刷新页面本地服务器网页引射到了本地文件。
+    1. 重新刷新页面本地服务器网页引射到了本地文件。
     ![](../assets/img/tool_chrome_addproject4.png)
-    4. 在浏览器中修改样式，会发现样式表中的文件也会自动改变
+    1. 在浏览器中修改样式，会发现样式表中的文件也会自动改变
      ![](../assets/img/tool_chrome_addproject5.png)
      
     <span style="color:red">注意事项</span><br>
@@ -43,17 +42,24 @@
 该选项用于创建可复用的代码片段.
 使用步骤如下
  
-1. 点击 sorce->Snippets->点击 `New snippet` 创建片段(可在片段上点击右键,选择重名名等操作)
-2. 在片段中中填入 js 代码，按 `⌘ + s` 保存代码
-
-    > **tip**
-    > windows 下将 `⌘` 替换为 `ctrl` 后不赘述
-
+1. 点击 source->Snippets->点击 `New snippet` 创建片段(可在片段上点击右键,选择重名名等操作)
+2. 在片段中填入 js 代码，按 `⌘ + s` 保存代码
+    > windows 将 `⌘` 替换为 `ctrl`
 3. 编辑完成,输入 `⌘ + enter` 执行代码,在片段上点击右键选择执行.
 
 
+也可在控制台下,通过 `⌘+shift+p` 打开命令面板,然后输入 `!` 即可选择 snippets 中的片段进行执行,参看动图,演示如何执行自定义的 hello world 片段。
+
+![](../assets/img/run-snippets.gif)
+
+::: tip
+github 上有一个 [devtools-snippets](https://github.com/bgrins/devtools-snippets) 项目收集了一些常用的 snippets 😋,你也可以将自己常用的脚本通过 snippets 保存,采用上述方式调用
+:::
+
 更详细资料参见
-[google 原文地址](https://developers.google.com/web/tools/chrome-devtools/debug/snippets/?hl=en) .
+[google 原文地址](https://developers.google.com/web/tools/chrome-devtools/debug/snippets/?hl=en) 
+
+
 
 ## 调试代码
 屏幕下方的括号美化 js
