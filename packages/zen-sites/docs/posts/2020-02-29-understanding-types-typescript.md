@@ -38,7 +38,7 @@ tags:
 2. `sourceType` 可以赋给 `TargetType` 是 `SourceType` 为 `TargetType` 的子集。
 3. 联合类型(TypeUnion) 属于类型 `Type1`,`Type2` 和 `Type3` 是集合理论的并集
 
-## 3. 观点 2: 类型兼容关系
+## 3 观点 2: 类型兼容关系
 
 在这种视角下: 我们不关心值和在代码运行时如何变化。取而代之，我们更多采用静态视角。
 
@@ -71,7 +71,7 @@ arr.push('abc');
 arr;
 ```
 
-### 4. 标明类型系统(Nominal type systems) vs 结构类型系统(structural type systems )
+## 4 标明类型系统(Nominal type systems) vs 结构类型系统(structural type systems )
 
 静态类型系统的一个任务是判断两种静态类型是否兼容。
 * 静态类型 `U` 是一个实际的参数(例如通过函数调用)
