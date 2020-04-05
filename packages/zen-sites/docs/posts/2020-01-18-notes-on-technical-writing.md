@@ -77,5 +77,6 @@ Daniele Procida 撰写了[关于文档你不知道的](https://www.divio.com/blo
     > 译者注: 这类似文档概念建立和术语阐述章节,例如 [webpack concept](https://webpack.js.org/concepts/)
 4. **参考指南** 参考指南是面向信息的，它应该准确而完整的描述机理。API 文档是参考指南的典型事例。
 
-
+## 延伸阅读
+* [Google Technical Writing](https://developers.google.com/tech-writing/one)
 
