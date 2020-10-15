@@ -9,6 +9,7 @@
 
 
 ## 杂项
+
 ### 消息显示模式
 重复消息会只显示一次，但是会利用序号标识出现次数
 如果觉得不好可以按 F1 将控制台显示变为时间戳模式
@@ -22,6 +23,51 @@
 [用户格式的控制台输出](https://docs.google.com/document/d/1FTascZXT9cxfetuPRT2eXPQKXui4nWFivUnS_335T3U/preview#heading=h.xuvxhsd2bp05)
 
 ## API
+chrome 在控制台环境包含了大量 API 方便调试。
+
+::: warning
+不要再脚本中使用非 console 对象的调试 API，由于调试API 只存在控制台环境，可能在脚本中报错。
+:::
+
+### DOM 访问
+
+1. **$0 - $4**
+    DOM 对象的快捷引用， `$0` 表示最近的 DOM 对象，`$1` 表示之前引用的对象。后续值依次类推。注意这个值是在使用 inspect 观察对象时自动记录的。
+2. **$(selector, startNode)**
+
+    该方法是 `document.querySelector` 的缩写, `startNode` 申明搜索的初始节点，默认为 `document`
+
+3. **$$(selector,startNode)**
+
+   该方法是 `document.querySelectorAll` 的缩写
+   `startNode` 申明搜索的初始节点，默认为 `document`
+
+4. **$x(path, [startNode])**
+    支持采用 `xpath` 语法搜索节点
+
+5. **inspect(fucntion/object)**
+   传入函数会跳转到 source 面板，dom 对象会跳转到 element 面板实现快速定位
+
+6. **getEventListeners(object)** 
+   快速返回 dom 元素上的监听事件，多个会返回数组
+7. **monitorEvents(object[, events])，unmonitorEvents(object[, events])**
+   监控，取消对象事件变化监听，events 支持数组，例如  `monitorEvents(window, ["resize", "scroll"])` 监控窗口尺寸变化和滚动事件，会在事件触发时打印事件结果，事件列表详见 [devtool](https://developers.google.com/web/tools/chrome-devtools/console/utilities)
+
+
+### 控制台控制
+1. **clear()**
+   清空控制台，MaC 快捷键为 `ctrl+l`
+2. **copy(object)** 
+   复制内容
+3. **debug(function)，undebug(function)**
+   给函数设置，取消断点
+4. **dir**
+   按照对象风格显示结果，适用于 dom 等复杂对象的输出
+5. **monitor(function)，unmonitor(function)**
+   设置，取消函数执行监控，当函数被调用时自动打印输入，注意对象输入无法正确打印
+6. **queryObjects(Constructor)**
+   返回某个构造函数创建的对象，例如 queryObjects(Promise) 返回所有 promise 实例
+
 ### console
 console 用于打印信息
 
@@ -168,12 +214,16 @@ console.dir(document);
     console.timeEnd("Array initialize");
 ```
 
-### inspect 
-用于定位元素,结合 `$` 操作符可以快速定位元素。
-```js
-inspect($('body')) // 定位 body 元素
-```
 
+
+
+
+
+### 杂项
+1. **keys(object),values(object)**
+   返回键和值，效果类似 `Object.keys，Object.values`
+2. **table(data,[columns])**
+   按照表格显示数据，方便查看返回结果，`columns` 显示特定列
 ## 参考资料
 * [console API 详解](https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference#consoletraceobject)
 * [控制台 API](https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference?hl=en)
