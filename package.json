@@ -13,7 +13,8 @@
         "vuepress": "^1.2.0"
     },
     "scripts": {
-        "start": "lerna run start --scope  'zen-sites'"
+        "start": "lerna run start --scope  'zen-sites'",
+        "init": "lerna bootstrap"
     },
     "repository": {
         "type": "git",
