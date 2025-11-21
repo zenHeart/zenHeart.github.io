@@ -2,10 +2,7 @@ const { createPostsSidebar } = require('./utils');
 const path = require('path');
 const fs = require('fs');
 
-const extensions = fs
-    .readdirSync(path.resolve('docs/projects/chrome/extensions'))
-    .map(filename => 'extensions/' + filename.slice(0, -3))
-    .sort();
+
 
 module.exports = {
     theme: 'zen',
@@ -30,30 +27,5 @@ module.exports = {
             { text: '项目', link: '/projects/' }
             // { text: '简历', link: '/resume' }
         ],
-        sidebar: {
-            '/projects/chrome/': [
-                {
-                    title: '概述',
-                    children: ['']
-                },
-                {
-                    title: 'devtool',
-                    children: [
-                        'devtool/',
-                        'devtool/console',
-                        'devtool/network',
-                        'devtool/source',
-                        'devtool/timeline',
-                        'devtool/performance',
-                        'devtool/theory',
-                        'devtool/cheatsheet'
-                    ]
-                },
-                {
-                    title: '扩展',
-                    children: extensions
-                }
-            ]
-        }
     }
 };
