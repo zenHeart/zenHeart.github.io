@@ -6,3 +6,4 @@ _drafts/
 node_modules/
 lab/
 dist/
+.DS_Store
