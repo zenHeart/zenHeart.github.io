@@ -2,6 +2,7 @@
 tags:
     - 工具
     - vscode
+read: 8
 ---
 
 # vscode snippets 插件

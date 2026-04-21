@@ -7,3 +7,7 @@ node_modules/
 lab/
 dist/
 .DS_Store
+.claude
+cache/
+.agents
+.claude

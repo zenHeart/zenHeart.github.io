@@ -1,0 +1,16 @@
+{
+  "name": "vitepress-theme-zen",
+  "version": "1.0.0",
+  "description": "Zen theme for VitePress - Modern Zen aesthetic",
+  "type": "module",
+  "main": "theme/index.js",
+  "exports": {
+    ".": "./theme/index.js"
+  },
+  "dependencies": {
+    "vue": "^3.5.32"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.6.0"
+  }
+}
