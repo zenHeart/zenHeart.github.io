@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Minimalist Technical Blog – ZenHeart Blog</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">ZenHeart Blog</div>
+      <nav class="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="posts.html" class="current">Posts</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+    </div>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <h1>Building a Minimalist Technical Blog</h1>
+        <p class="article-meta">Written by <strong>ZenHeart</strong> · <time datetime="2026-04-22">22 Apr 2026</time></p>
+      </header>
+      <p>Minimalism in web design emphasises clarity, focus and deliberate choices. When building a technical blog, a minimalist approach helps readers engage with your content without distractions. In this article we'll outline the key principles for crafting a calm, zen‑inspired blog.</p>
+      <h2>Design Principles</h2>
+      <p>A successful minimalist design starts with intentional layouts and typography. Focus on high contrast for code samples, ample spacing, and subtle colour palettes. A technical blog benefits from content‑first layouts and documentation‑style structures that provide navigation without overwhelming the reader.</p>
+      <pre><code class="language-javascript">// Example JavaScript snippet demonstrating a simple theme toggle
+const toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark-mode');
+});
+</code></pre>
+      <h2>Responsive Behaviour</h2>
+      <p>Ensure your design adapts gracefully across desktop, tablet and mobile devices. A single‑column layout on smaller screens improves readability. Navigation can collapse into a simple menu for touch‑friendly interaction.</p>
+      <p>With these principles in mind, you're ready to create your own minimalist technical blog that reflects a calm and focused user experience.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 ZenHeart Blog. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
