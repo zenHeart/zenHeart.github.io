@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as s}from"./chunks/framework.BG8d4IEm.js";const m=JSON.parse('{"title":"博客","description":"所有文章列表","frontmatter":{"title":"博客","description":"所有文章列表"},"headers":[],"relativePath":"posts.md","filePath":"posts.md"}'),o={name:"posts.md"};function a(r,c,n,p,i,d){return e(),s("div")}const f=t(o,[["render",a]]);export{m as __pageData,f as default};

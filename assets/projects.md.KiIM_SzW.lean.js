@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as r}from"./chunks/framework.BG8d4IEm.js";const m=JSON.parse('{"title":"项目","description":"个人项目作品集","frontmatter":{"title":"项目","description":"个人项目作品集"},"headers":[],"relativePath":"projects.md","filePath":"projects.md"}'),o={name:"projects.md"};function s(a,c,n,p,i,d){return t(),r("div")}const f=e(o,[["render",s]]);export{m as __pageData,f as default};

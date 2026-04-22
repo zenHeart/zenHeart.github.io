@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as a}from"./chunks/framework.BG8d4IEm.js";const m=JSON.parse('{"title":"关于","description":"关于作者","frontmatter":{"title":"关于","description":"关于作者"},"headers":[],"relativePath":"about.md","filePath":"about.md"}'),o={name:"about.md"};function r(s,c,n,i,p,d){return e(),a("div")}const f=t(o,[["render",r]]);export{m as __pageData,f as default};
