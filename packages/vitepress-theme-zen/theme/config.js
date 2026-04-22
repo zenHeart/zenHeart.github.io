@@ -9,7 +9,7 @@ export const defaultI18n = {
       searchTooltip: '搜索 (⌘K)',
       themeTooltip: '切换主题',
       rssTooltip: 'RSS 订阅',
-      settingsTooltip: '设置',
+      menuTooltip: '菜单',
       feedUrl: '/feed.xml'
     },
     footer: {

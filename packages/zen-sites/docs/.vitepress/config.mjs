@@ -1,5 +1,6 @@
 import mathjax3 from 'markdown-it-mathjax3'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import { RssPlugin } from 'vitepress-plugin-rss'
 
 const mathjaxCustomElements = [
   'mjx-container', 'mjx-assistive-mml', 'math', 'maction', 'maligngroup', 'malignmark',
@@ -115,7 +116,7 @@ export default withMermaid({
     contact: {
       github: "https://github.com/zenHeart",
       rss: "/feed.xml",
-      email: "hi [at] zenheart@aliyun.com"
+      email: "hi [at] zenheart_register@163.com"
     }
   },
 
@@ -131,6 +132,21 @@ export default withMermaid({
   vite: {
     optimizeDeps: {
       include: ['dayjs', '@braintree/sanitize-url', 'debug', 'cytoscape', 'cytoscape-cose-bilkent', 'langium']
-    }
+    },
+    plugins: [
+      RssPlugin({
+        baseUrl: 'https://blog.zenheart.site',
+        filename: 'feed.xml',
+        title: '编码即是修行',
+        description: 'Coding · Cultination · Contemplation',
+        language: 'zh-CN',
+        copyright: 'Copyright (c) 2016-present, zenheart',
+        author: {
+          name: 'zenheart',
+          email: 'zenheart1991@gmail.com',
+          link: 'https://blog.zenheart.site'
+        }
+      })
+    ]
   }
 })

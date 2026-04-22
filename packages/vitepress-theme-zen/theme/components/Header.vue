@@ -1,21 +1,22 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { getThemeI18n } from '../config.js'
 
 const props = defineProps({
   isDark: Boolean,
-  searchOpen: Boolean,
-  tweaksOpen: Boolean
+  searchOpen: Boolean
 })
 
-const emit = defineEmits(['update:isDark', 'update:searchOpen', 'update:tweaksOpen', 'toggleTweaks'])
+const emit = defineEmits(['update:isDark', 'update:searchOpen'])
 
 const { site } = useData()
 const route = useRoute()
 
 const nav = computed(() => site.value?.themeConfig?.nav || [])
 const i18n = computed(() => getThemeI18n(site.value))
+
+const menuOpen = ref(false)
 
 function toggleDarkMode() {
   emit('update:isDark', !props.isDark)
@@ -25,11 +26,35 @@ function toggleDarkMode() {
 
 function openSearch() {
   emit('update:searchOpen', true)
+  menuOpen.value = false
 }
 
-function toggleTweaks() {
-  emit('update:tweaksOpen', !props.tweaksOpen)
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value
 }
+
+function closeMenu() {
+  menuOpen.value = false
+}
+
+// Close drawer on route change so nav clicks always dismiss it
+watch(() => route.path, closeMenu)
+
+// Lock body scroll when drawer is open
+watch(menuOpen, (open) => {
+  if (typeof document === 'undefined') return
+  document.body.style.overflow = open ? 'hidden' : ''
+})
+
+function onKeydown(e) {
+  if (e.key === 'Escape' && menuOpen.value) closeMenu()
+}
+
+onMounted(() => document.addEventListener('keydown', onKeydown))
+onBeforeUnmount(() => {
+  document.removeEventListener('keydown', onKeydown)
+  if (typeof document !== 'undefined') document.body.style.overflow = ''
+})
 </script>
 
 <template>
@@ -62,17 +87,39 @@ function toggleTweaks() {
             <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </button>
-        <a class="icon-btn" :href="i18n.header.feedUrl" :title="i18n.header.rssTooltip">
+        <a class="icon-btn rss-link" :href="i18n.header.feedUrl" :title="i18n.header.rssTooltip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>
           </svg>
         </a>
-        <button class="icon-btn" @click="toggleTweaks" :title="i18n.header.settingsTooltip">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        <button class="icon-btn menu-btn" :class="{ active: menuOpen }" @click="toggleMenu" :title="i18n.header.menuTooltip" :aria-expanded="menuOpen" aria-label="菜单">
+          <svg v-if="!menuOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+          </svg>
+          <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
           </svg>
         </button>
       </div>
     </div>
+
   </header>
+
+  <!-- Mobile drawer — teleported out of sticky+backdrop-filter parent -->
+  <Teleport to="body">
+    <div class="mobile-drawer" :class="{ open: menuOpen }" @click.self="closeMenu" aria-hidden="true">
+      <nav class="mobile-nav" @click="closeMenu">
+        <a v-for="item in nav" :key="item.path || item.link"
+           :href="item.path || item.link"
+           :class="{ active: route.path === (item.path || item.link) || (item.path && route.path.startsWith(item.path)) }">
+          <span class="mobile-nav-text">{{ item.text }}</span>
+          <span v-if="item.en" class="mobile-nav-en">{{ item.en }}</span>
+        </a>
+        <a :href="i18n.header.feedUrl" class="mobile-nav-rss">
+          <span class="mobile-nav-text">RSS</span>
+          <span class="mobile-nav-en">feed.xml</span>
+        </a>
+      </nav>
+    </div>
+  </Teleport>
 </template>

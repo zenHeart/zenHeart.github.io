@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "pnpm --filter zen-sites dev",
     "build": "pnpm --filter zen-sites build",
-    "preview": "pnpm --filter zen-sites preview"
+    "preview": "pnpm --filter zen-sites preview",
+    "docs:build": "pnpm --filter zen-sites build",
+    "deploy:site": "sh packages/zen-sites/scripts/deploy.sh"
   },
   "devDependencies": {
     "vitepress": "^1.6.0"

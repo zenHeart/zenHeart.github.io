@@ -59,7 +59,7 @@ const fullTimeline = computed(() => {
       <div class="entries">
         <div class="section-head">
           <h2>{{ i18n.home.recentPostsLabel }}<span class="en">{{ i18n.home.recentPostsLabelEn }}</span></h2>
-          <a href="/archive" class="more">{{ i18n.home.viewAllLabel }}</a>
+          <a href="/posts" class="more">{{ i18n.home.viewAllLabel }}</a>
         </div>
         <div v-for="[year, yearPosts] in recentPostsByYear" :key="year" class="year-group">
           <div class="year-label">
@@ -83,13 +83,13 @@ const fullTimeline = computed(() => {
         <div class="aside-block">
           <h3>{{ i18n.home.tagsTitle }}<span class="en">{{ i18n.home.tagsTitleEn }}</span></h3>
           <div class="aside-tags">
-            <a v-for="tag in TAGS.slice(0, 15)" :key="tag.name" :href="`/archive?tag=${tag.name}`" class="tag">{{ tag.name }}<span class="count">{{ tag.count }}</span></a>
+            <a v-for="tag in TAGS.slice(0, 15)" :key="tag.name" :href="`/posts?tag=${tag.name}`" class="tag">{{ tag.name }}<span class="count">{{ tag.count }}</span></a>
           </div>
         </div>
         <div class="aside-block">
           <h3>{{ i18n.home.timelineLabel }}<span class="en">{{ i18n.home.timelineLabelEn }}</span></h3>
           <div class="aside-years">
-            <a v-for="[year, yearPosts] in fullTimeline" :key="year" :href="`/archive?year=${year}`" class="year-item">
+            <a v-for="[year, yearPosts] in fullTimeline" :key="year" :href="`/posts?year=${year}`" class="year-item">
               <span class="year-name">{{ year }}</span>
               <span class="year-count">{{ yearPosts.length }}</span>
             </a>
