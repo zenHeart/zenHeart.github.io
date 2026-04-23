@@ -2,6 +2,7 @@
   "name": "zenheart.github.io",
   "private": true,
   "description": "编码即是修行 - Coding as Spiritual Practice",
+  "packageManager": "pnpm@10.27.0",
   "scripts": {
     "dev": "pnpm --filter zen-sites dev",
     "build": "pnpm --filter zen-sites build",
