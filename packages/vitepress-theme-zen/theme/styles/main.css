@@ -32,13 +32,17 @@ html[data-theme="dark"] {
   --seal: oklch(0.68 0.16 25);
   --seal-soft: oklch(0.68 0.16 25 / 0.18);
 }
+/* Zen 水墨 — ink wash: left-side brush stroke that fades like calligraphy on paper.
+   The SVG path mimics a vertical 墨痕 (ink trace) with ragged right-edge diffusion.
+   Turbulence + displacement create organic ink-bleeding on the paper surface.
+*/
 html[data-theme="dark"] body::before {
-  background-image:
-    radial-gradient(circle at 20% 30%, oklch(0.30 0.02 260 / 0.45), transparent 45%),
-    radial-gradient(circle at 80% 70%, oklch(0.28 0.02 250 / 0.3), transparent 50%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.85 0 0 0 0 0.90 0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  background-size: auto, auto, 200px 200px;
-  opacity: 0.7;
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='900' viewBox='0 0 500 900'%3E%3Cdefs%3E%3Cfilter id='ink' x='-20%25' y='-10%25' width='140%25' height='120%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.018 0.06' numOctaves='3' seed='8' stitchTiles='stitch' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='22' xChannelSelector='R' yChannelSelector='G' result='displaced'/%3E%3CfeGaussianBlur in='displaced' stdDeviation='4' result='soft'/%3E%3CfeComposite in='soft' in2='SourceGraphic' operator='in' result='inked'/%3E%3C/filter%3E%3ClinearGradient id='shaft' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230a0c14' stop-opacity='0'/%3E%3Cstop offset='0.18' stop-color='%230a0c14' stop-opacity='0.30'/%3E%3Cstop offset='0.55' stop-color='%230a0c14' stop-opacity='0.14'/%3E%3Cstop offset='0.85' stop-color='%230a0c14' stop-opacity='0.04'/%3E%3Cstop offset='1' stop-color='%230a0c14' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='bleed' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230a0c14' stop-opacity='0'/%3E%3Cstop offset='0.08' stop-color='%230a0c14' stop-opacity='0.06'/%3E%3Cstop offset='0.92' stop-color='%230a0c14' stop-opacity='0.06'/%3E%3Cstop offset='1' stop-color='%230a0c14' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='900' fill='url(%23shaft)' filter='url(%23ink)' opacity='0.85'/%3E%3Crect width='500' height='900' fill='url(%23bleed)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 340px 100%;
+  background-position: -10px 0;
+  background-repeat: no-repeat;
+  opacity: 0.6;
 }
 html[data-theme="dark"] .post-body pre {
   background: oklch(0.12 0.01 260) !important;
@@ -68,13 +72,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Light mode — warm ink trace on paper, subtle 墨韵 effect */
 body::before {
   content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image:
-    radial-gradient(circle at 20% 30%, oklch(0.90 0.02 70 / 0.35), transparent 45%),
-    radial-gradient(circle at 80% 70%, oklch(0.88 0.02 260 / 0.18), transparent 50%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.12 0 0 0 0 0.10 0 0 0 0.03 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  background-size: auto, auto, 200px 200px; opacity: 0.85;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='900' viewBox='0 0 400 900'%3E%3Cdefs%3E%3Cfilter id='ink' x='-25%25' y='-10%25' width='150%25' height='120%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.055' numOctaves='3' seed='12' stitchTiles='stitch' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='18' xChannelSelector='R' yChannelSelector='G' result='displaced'/%3E%3CfeGaussianBlur in='displaced' stdDeviation='3.5' result='soft'/%3E%3CfeComposite in='soft' in2='SourceGraphic' operator='in'/%3E%3C/filter%3E%3ClinearGradient id='shaft' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%232a1a0a' stop-opacity='0'/%3E%3Cstop offset='0.15' stop-color='%232a1a0a' stop-opacity='0.12'/%3E%3Cstop offset='0.50' stop-color='%232a1a0a' stop-opacity='0.06'/%3E%3Cstop offset='1' stop-color='%232a1a0a' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='bleed' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a1a0a' stop-opacity='0'/%3E%3Cstop offset='0.06' stop-color='%232a1a0a' stop-opacity='0.05'/%3E%3Cstop offset='0.94' stop-color='%232a1a0a' stop-opacity='0.05'/%3E%3Cstop offset='1' stop-color='%232a1a0a' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='900' fill='url(%23shaft)' filter='url(%23ink)' opacity='0.75'/%3E%3Crect width='400' height='900' fill='url(%23bleed)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 280px 100%;
+  background-position: -8px 0;
+  background-repeat: no-repeat;
+  opacity: 0.7;
 }
 
 .zen-app { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
@@ -174,7 +179,10 @@ main.page { flex: 1; max-width: var(--page); margin: 0 auto; padding: 56px 28px 
 .page-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.08em; }
 
 .hero { padding: 60px 0 80px; text-align: left; position: relative; margin-bottom: 32px; }
-.hero .wash { position: absolute; right: 0; top: -20px; width: 320px; height: 320px; pointer-events: none; background: radial-gradient(ellipse at 40% 50%, oklch(0.35 0.02 260 / 0.08), transparent 60%), radial-gradient(circle at 60% 40%, oklch(0.25 0.01 260 / 0.05), transparent 55%); filter: blur(0.5px); }
+.hero .wash { position: absolute; right: 0; top: -20px; width: 340px; height: 340px; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cdefs%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.03 0.04' numOctaves='3' seed='5' stitchTiles='stitch' result='n'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='n' scale='14' xChannelSelector='R' yChannelSelector='G' result='d'/%3E%3CfeGaussianBlur in='d' stdDeviation='5'/%3E%3C/filter%3E%3CradialGradient id='g' cx='40%25' cy='50%25' r='50%25'%3E%3Cstop offset='0' stop-color='%23ece8e0' stop-opacity='0.18'/%3E%3Cstop offset='1' stop-color='%23ece8e0' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cellipse cx='180' cy='200' rx='180' ry='200' fill='url(%23g)' filter='url(%23w)'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+}
 .hero h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(44px, 6vw, 72px); line-height: 1.1; letter-spacing: 0.03em; margin: 0 0 12px; color: var(--ink); position: relative; }
 .hero .tagline { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 28px; }
 .hero p.intro { max-width: 560px; font-size: 15px; color: var(--ink-soft); line-height: 1.8; margin: 0 0 32px; }
