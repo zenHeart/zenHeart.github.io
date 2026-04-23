@@ -26,7 +26,8 @@ export default withMermaid({
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'theme-color', content: '#e8d5b7' }]
+    ['meta', { name: 'theme-color', content: '#e8d5b7' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: '编码即是修行 · RSS', href: 'https://blog.zenheart.site/feed.xml' }]
   ],
 
   vue: {
@@ -145,7 +146,15 @@ export default withMermaid({
           name: 'zenheart',
           email: 'zenheart1991@gmail.com',
           link: 'https://blog.zenheart.site'
-        }
+        },
+        filter: (post) => {
+          // 只保留 posts 目录下的文章，排除首页/about/projects/tags/posts 索引/RESUME
+          const fp = (post.filepath || '').replace(/\\/g, '/')
+          return /\/docs\/posts\/[^/]+\.md$/.test(fp)
+        },
+        // 剥离 XML 1.0 禁止的控制字符（0x00-0x1F 除 \t \n \r），
+        // 这些字符若出现在 CDATA 内部仍会让 XML/RSS 解析器报错。
+        transform: (content) => content.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '')
       })
     ]
   }
