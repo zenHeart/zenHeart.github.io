@@ -1,0 +1,126 @@
+/* Giscus custom theme — zen / warm-paper light
+ * 站点暖米调（paper + clay seal）适配，覆盖 Giscus 默认 light 主题中冷白与绿色按钮。
+ * 参考：https://github.com/giscus/giscus/tree/main/styles/themes
+ */
+main {
+  --color-prettylights-syntax-comment: #8a8377;
+  --color-prettylights-syntax-constant: #8a4a3a;
+  --color-prettylights-syntax-entity: #6f4f8a;
+  --color-prettylights-syntax-storage-modifier-import: #2a2d33;
+  --color-prettylights-syntax-entity-tag: #4a6f3a;
+  --color-prettylights-syntax-keyword: #b04a3a;
+  --color-prettylights-syntax-string: #4a6f3a;
+  --color-prettylights-syntax-variable: #b07a3a;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82858a;
+  --color-prettylights-syntax-invalid-illegal-text: #f8f4ee;
+  --color-prettylights-syntax-invalid-illegal-bg: #b04a3a;
+  --color-prettylights-syntax-carriage-return-text: #f8f4ee;
+  --color-prettylights-syntax-carriage-return-bg: #b04a3a;
+  --color-prettylights-syntax-string-regexp: #4a6f3a;
+  --color-prettylights-syntax-markup-list: #6e5a2a;
+  --color-prettylights-syntax-markup-heading: #2a2d33;
+  --color-prettylights-syntax-markup-italic: #2a2d33;
+  --color-prettylights-syntax-markup-bold: #2a2d33;
+  --color-prettylights-syntax-markup-deleted-text: #6f2a22;
+  --color-prettylights-syntax-markup-deleted-bg: #f5d6cf;
+  --color-prettylights-syntax-markup-inserted-text: #2a4a2a;
+  --color-prettylights-syntax-markup-inserted-bg: #d6e8cf;
+  --color-prettylights-syntax-markup-changed-text: #6e4f1a;
+  --color-prettylights-syntax-markup-changed-bg: #f5e8c7;
+  --color-prettylights-syntax-markup-ignored-text: #f1ede5;
+  --color-prettylights-syntax-markup-ignored-bg: #4a4d54;
+  --color-prettylights-syntax-meta-diff-range: #6f4f8a;
+  --color-prettylights-syntax-brackethighlighter-angle: #82858a;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #b8babe;
+  --color-prettylights-syntax-constant-other-reference-link: #4a6f8a;
+
+  --color-btn-text: #292c33;
+  --color-btn-bg: #f1ede5;
+  --color-btn-border: #d8d2c4;
+  --color-btn-shadow: 0 1px 0 rgba(41, 44, 51, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-hover-bg: #ede8de;
+  --color-btn-hover-border: #c4bda9;
+  --color-btn-active-bg: hsla(40, 18%, 78%, 0.7);
+  --color-btn-active-border: #b8b09a;
+  --color-btn-selected-bg: #e8e2d8;
+
+  /* primary button — site seal red instead of GitHub green */
+  --color-btn-primary-text: #fbf7f0;
+  --color-btn-primary-bg: #b04a3a;
+  --color-btn-primary-border: #9a3f31;
+  --color-btn-primary-shadow: 0 1px 0 rgba(41, 44, 51, 0.1);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --color-btn-primary-hover-bg: #9a3f31;
+  --color-btn-primary-hover-border: #87362a;
+  --color-btn-primary-selected-bg: #87362a;
+  --color-btn-primary-selected-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  --color-btn-primary-disabled-text: rgba(251, 247, 240, 0.7);
+  --color-btn-primary-disabled-bg: #d4a399;
+  --color-btn-primary-disabled-border: rgba(176, 74, 58, 0.4);
+  --color-btn-primary-icon: #fbf7f0;
+  --color-btn-primary-counter-bg: rgba(255, 255, 255, 0.2);
+
+  --color-action-list-item-default-hover-bg: #ede8de;
+
+  /* tabs (input / preview) */
+  --color-segmented-control-bg: #ede8de;
+  --color-segmented-control-button-bg-selected: #f8f4ee;
+  --color-segmented-control-button-selected-border: #d8d2c4;
+
+  --color-fg-default: #292c33;
+  --color-fg-muted: #4f5258;
+  --color-fg-subtle: #82858a;
+  --color-fg-on-emphasis: #fbf7f0;
+
+  --color-canvas-default: #f8f4ee;          /* main bg = paper */
+  --color-canvas-overlay: #fbf7f0;
+  --color-canvas-inset: #ede8de;            /* input bg */
+  --color-canvas-subtle: #f1ede5;           /* tab bg, hover */
+
+  --color-border-default: #d8d2c4;
+  --color-border-muted: #e2dccf;
+
+  --color-neutral-muted: rgba(176, 165, 140, 0.2);
+  --color-neutral-emphasis: #82858a;
+  --color-neutral-emphasis-plus: #292c33;
+
+  --color-accent-fg: #b04a3a;               /* links use seal */
+  --color-accent-emphasis: #b04a3a;
+  --color-accent-muted: rgba(176, 74, 58, 0.4);
+  --color-accent-subtle: rgba(176, 74, 58, 0.12);
+
+  --color-success-fg: #4a6f3a;
+  --color-success-emphasis: #4a6f3a;
+  --color-attention-fg: #8a6a1a;
+  --color-attention-muted: rgba(178, 134, 41, 0.4);
+  --color-attention-subtle: rgba(245, 232, 199, 0.6);
+  --color-danger-fg: #8a3422;
+  --color-danger-muted: rgba(176, 74, 58, 0.4);
+  --color-danger-subtle: #f5d6cf;
+
+  --color-primer-shadow-inset: 0 1px 0 rgba(41, 44, 51, 0.04);
+  --color-scale-gray-1: #ede8de;
+}
+
+main .pagination-loader-container {
+  background-image: url('https://github.com/images/modules/pulls/progressive-disclosure-line.svg');
+  filter: hue-rotate(330deg) saturate(0.5);
+}
+
+main .gsc-loading-image {
+  background-image: url('https://github.githubassets.com/images/mona-loading-default.gif');
+}
+
+main .gsc-reactions-count {
+  display: none;
+}
+
+/* tame the cold blue link hue inside markdown */
+main .markdown a { color: #b04a3a; }
+main .markdown a:hover { color: #9a3f31; text-decoration: underline; }
+
+/* the giscus footer "powered by giscus" — italic + faint */
+main .gsc-comments > .gsc-header {
+  border-bottom: 1px solid #e2dccf;
+}

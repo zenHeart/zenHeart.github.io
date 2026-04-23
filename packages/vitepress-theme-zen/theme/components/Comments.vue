@@ -25,9 +25,13 @@ const term = computed(() => {
   return last.replace(/^\d{4}-\d{2}-\d{2}-/, '') || last || 'home'
 })
 
+// theme prop accepts a URL (custom CSS) or built-in theme name.
+// Custom CSS files live in docs/public — served at root as /giscus-zen-{light,dark}.css.
 const giscusTheme = computed(() => {
-  const t = config.value?.theme || {}
-  return isDark.value ? (t.dark || 'dark_dimmed') : (t.light || 'light')
+  if (isDark.value) {
+    return 'https://blog.zenheart.site/giscus-zen-dark.css'
+  }
+  return 'https://blog.zenheart.site/giscus-zen-light.css'
 })
 </script>
 
