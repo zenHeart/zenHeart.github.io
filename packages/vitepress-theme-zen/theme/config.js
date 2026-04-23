@@ -84,6 +84,9 @@ export const defaultI18n = {
       contactLabelEn: 'Contact',
       postsLabel: '篇笔记',
       projectsLabel: 'open-source projects'
+    },
+    comments: {
+      title: '评论 / Comments'
     }
   }
 }

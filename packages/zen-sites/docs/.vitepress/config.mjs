@@ -118,6 +118,31 @@ export default withMermaid({
       github: "https://github.com/zenHeart",
       rss: "/feed.xml",
       email: "hi [at] zenheart_register@163.com"
+    },
+
+    // 评论：基于 GitHub Discussions（Giscus），仅对 posts 类型内容生效。
+    // 启用步骤（一次性）：
+    //   1. Repo Settings → Features → 勾选 Discussions
+    //   2. Discussions 里建一个 Announcement 类型 category：Comments
+    //   3. 安装 https://github.com/apps/giscus 到本仓库
+    //   4. 去 https://giscus.app 输入 repo + 选 mapping=specific + 选 Comments category，
+    //      复制生成的 data-repo-id 和 data-category-id 填到下面 repoId / categoryId
+    // 配置完成前 repoId/categoryId 为空，组件自动不渲染（不影响构建）。
+    comments: {
+      provider: 'giscus',
+      repo: 'zenHeart/zenHeart.github.io',
+      repoId: 'MDEwOlJlcG9zaXRvcnkxNjQyOTE4NDI=',
+      category: 'Comments',
+      categoryId: 'DIC_kwDOCcrlAs4C7eMh',
+      mapping: 'specific', // 用 frontmatter.slug 或文件名（去掉 YYYY-MM-DD- 前缀）
+      strict: '0',         // 0 = discussion 标题保持人类可读（vimium / vscode）
+      reactionsEnabled: '1',
+      inputPosition: 'top',
+      lang: 'zh-CN',
+      theme: {
+        light: 'light',
+        dark: 'dark_dimmed' // 比纯 dark 柔和，跟站点暖色调更配
+      }
     }
   },
 

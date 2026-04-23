@@ -1141,6 +1141,16 @@ footer.foot a:hover { color: var(--seal); }
 .post-foot .nav-card.next { text-align: right; }
 .post-foot .nav-card h4 { font-family: var(--serif); font-weight: 500; font-size: 15px; margin: 0; color: var(--ink); }
 
+/* Comments (Giscus) */
+.comments { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--rule); }
+.comments-title { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--ink-faint); letter-spacing: 0.15em; text-transform: uppercase; margin: 0 0 24px; }
+.comments .giscus, .comments .giscus-frame { width: 100%; }
+.comments .giscus-frame { color-scheme: normal; }
+@media (max-width: 720px) {
+  .comments { margin-top: 48px; padding-top: 24px; }
+  .comments-title { margin-bottom: 16px; }
+}
+
 /* Projects Kanban */
 .projects-kanban { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
 .kanban-col { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 2px; padding: 16px; min-height: 280px; min-width: 0; }

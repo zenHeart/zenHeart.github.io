@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { usePosts } from '../composables/usePosts.js'
+import Comments from './Comments.vue'
 
 const { frontmatter, page } = useData()
 const route = useRoute()
@@ -130,5 +131,7 @@ watch(() => route.path, () => {
       </a>
       <div v-else></div>
     </nav>
+
+    <Comments />
   </article>
 </template>
