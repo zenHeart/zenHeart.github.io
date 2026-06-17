@@ -11,7 +11,7 @@ module.exports = {
             path.resolve(__dirname, './node_modules')
         );
     },
-    title: '编码即是修行',
+    title: '编码即是修行，构筑以观世界',
     description: 'vue blog',
     markdown: {
         config: md => {
